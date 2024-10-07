@@ -35,7 +35,7 @@ const authenticateUser = async (username: string, password: string): Promise<Use
   }
 };
 
-export const authOptions: AuthOptions = {
+const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
