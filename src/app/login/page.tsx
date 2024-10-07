@@ -4,7 +4,6 @@ import React from 'react'
 import LoginFormContainer from '@/components/LoginComponent/Login'
 import Navbar from '@/components/Navbar/Navbar'
 import Link from 'next/link'
-import styles from '../page.module.css'
 
 
 export default function LoginPage() {
@@ -13,7 +12,7 @@ export default function LoginPage() {
     <div>
       <Navbar>
         <h1>Store</h1>
-        <div className={styles.navLink}>
+        <div>
           <Link href='/register'>Registrar</Link> 
         </div>
       </Navbar>
