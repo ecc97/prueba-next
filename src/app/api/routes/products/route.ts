@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { urlApi } from "../../ApiUrl";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
     try {
         const response = await fetch(`${urlApi}/auth/products`);
         const data = await response.json();
