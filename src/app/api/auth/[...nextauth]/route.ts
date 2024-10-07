@@ -1,9 +1,8 @@
-import NextAuth from "next-auth/next";
+import NextAuth, { AuthOptions, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { urlApi } from "../../ApiUrl";
 
-
-const authenticateUser = async (username: string, password: string) => {
+const authenticateUser = async (username: string, password: string): Promise<User | null> => {
   try {
     const response = await fetch(`${urlApi}/auth/login`, {
       method: "POST",
@@ -21,12 +20,12 @@ const authenticateUser = async (username: string, password: string) => {
 
     if (data.user && data.access_token) {
       return {
-        id: data.user.id,
+        id: data.user._id,
         email: data.user.email,
         username: data.user.username,
         name: data.user.name,
         phone: data.user.phone,
-        token: data.access_token,
+        accessToken: data.access_token,
       };
     }
     throw new Error("User data is incomplete");
@@ -36,7 +35,7 @@ const authenticateUser = async (username: string, password: string) => {
   }
 };
 
-const handler = NextAuth({
+export const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -58,11 +57,7 @@ const handler = NextAuth({
           credentials.username,
           credentials.password
         );
-        if (user) {
-          return user;
-        } else {
-          throw new Error("Invalid email or password");
-        }
+        return user;
       },
     }),
   ],
@@ -72,22 +67,26 @@ const handler = NextAuth({
         token.id = user.id;
         token.email = user.email;
         token.username = user.username;
-        token.token = user.token;
+        token.accessToken = user.accessToken;
+        token.phone = user.phone;
       }
       return token;
     },
     async session({ session, token }) {
-      if (token) {
+      if (token && session.user) {
         session.user.id = token.id as string;
         session.user.email = token.email as string;
         session.user.username = token.username as string;
-        session.user.token = token.token as string;
+        session.user.phone = token.phone as string;
+        session.accessToken = token.accessToken as string;
       }
       return session;
     },
   },
   secret: process.env.NEXTAUTH_SECRET || "secret-key",
   session: { strategy: "jwt" },
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
