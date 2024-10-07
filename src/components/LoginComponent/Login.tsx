@@ -60,7 +60,7 @@ export default function LoginFormContainer() {
         console.log(session?.user.email);
         console.log(updatedSession?.user.email);
         console.log(updatedSession?.user.username);
-        router.push("/home");
+        router.push("/products");
       }
     } catch (error) {
       setError("Hubo un error iniciando sesión.");
