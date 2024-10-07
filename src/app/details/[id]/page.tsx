@@ -42,13 +42,13 @@ const ProductDetails = ({ params }: { params: { id: string } }) => {
         });
         setProduct(response.data);
       } catch (error) {
-        console.error("Error al obtener el producto:", error);
+        console.error("Error", error);
         if (axios.isAxiosError(error) && error.response?.status === 401) {
-          setError("No autorizado. Por favor, inicie sesión nuevamente.");
+          setError("No autorizado.");
           router.push("/login");
         } else {
           setError(
-            "Error al obtener el producto. Por favor, intente nuevamente."
+            "Error al obtener el producto."
           );
         }
       } finally {

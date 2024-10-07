@@ -28,7 +28,7 @@ const CartPage = () => {
 
     const handleRemoveFromCart = (id: number) => {
         dispatch(removeFromCart(id))
-        // Actualizar localStorage
+        
         const updatedCart = cartItems.filter(item => item.id !== id);
         localStorage.setItem("cart", JSON.stringify(updatedCart));
     }

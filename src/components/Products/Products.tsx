@@ -18,7 +18,7 @@ const Products: React.FC<ProductProps> = ({ token }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const response = await axios.get("http://192.168.88.39:7000/auth/products", {
+        const response = await axios.get("https://api-coders-advanced-route-production.up.railway.app/auth/products", {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",

@@ -43,7 +43,7 @@ export default function LoginFormContainer() {
     e.preventDefault();
     setError(null);
     try {
-      console.log("Attempting to sign in with:", loginState);
+      
       const result = await signIn("credentials", {
         redirect: false,
         username: loginState.username,

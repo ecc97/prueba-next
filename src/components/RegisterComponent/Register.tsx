@@ -28,8 +28,7 @@ const initialStateRegister: UserRegister = {
 export default function RegisterFormContainer() {
   const traduction = useTranslations("RegisterView");
   const router = useRouter();
-  const [registerState, setRegisterState] =
-    React.useState<UserRegister>(initialStateRegister);
+  const [registerState, setRegisterState] = React.useState<UserRegister>(initialStateRegister);
   const [error, setError] = React.useState("");
   const [loading, setLoading] = React.useState(false);
 

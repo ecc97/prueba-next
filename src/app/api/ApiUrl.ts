@@ -1,1 +1,1 @@
-export const urlApi: string = `http://192.168.88.39:7000`
+export const urlApi: string = `https://api-coders-advanced-route-production.up.railway.app`
