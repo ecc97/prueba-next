@@ -1,24 +1,30 @@
 {
     "LoginView": {
         "title": "Log In",
-        "email": "Email Address",
-        "password": "Password",
+        "titleNav": "Store",
+        "linkRegNav": "Sign Up",
+        "username": "Enter Username",
+        "password": "Enter Password",
         "buttonLogin": "Login",
-        "promptText": "Do you not have an account?",
+        "text": "Do you not have an account?",
         "linkRegister": "Register now" 
     },
     "RegisterView": {
         "title": "Create an account",
-        "username": "username",
-        "email":"Email Address",
-        "password": "Password",
-        "confirmPassword": "Confirm Password",
+        "titleNav": "Store",
+        "linkLoginNav": "Log In",
+        "name": "Enter name",
+        "username": "Enter username",
+        "email":"Enter email Address",
+        "password": "Enter Password",
+        "phone": "Enter Phone",
         "buttonRegister": "Register",
-        "promptText": "Already have you an account?",
+        "loading": "Loading...",
+        "text": "Already have you an account?",
         "linkLogin": "Login now"
     },
-    "HomePageView": {
-        "title": "E-Commerce",
+    "ProductPageView": {
+        "title": "Store",
         "description": "Find products and community services",
         "welcome": "Welcome",
         "logoutButton": "Log out"

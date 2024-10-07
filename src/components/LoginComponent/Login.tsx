@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { signIn, useSession } from "next-auth/react";
 import { getSession } from "next-auth/react";
-import styled from "styled-components";
 import { StyleContainer } from "./styledLogin";
 import { Form } from "@/components";
 import Input from "@/components/ui/Input.ui";
@@ -73,22 +72,22 @@ export default function LoginFormContainer() {
         <Input
           type="text"
           name="username"
-          placeholder="Ingresa usuario"
+          placeholder={traduction("username")}
           value={loginState.username}
           onChange={handleInputChange}
         />
         <Input
           type="password"
           name="password"
-          placeholder="Ingresa contraseña"
+          placeholder={traduction("password")}
           value={loginState.password}
           onChange={handleInputChange}
         />
-        <Button type="submit">Iniciar</Button>
+        <Button type="submit">{traduction("buttonLogin")}</Button>
       </Form>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <div>
-        {traduction("promptText")}{" "}
+        {traduction("text")}{" "}
         <Link href="/register">{traduction("linkRegister")}</Link>
       </div>
     </StyleContainer>

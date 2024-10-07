@@ -1,24 +1,30 @@
 {
     "LoginView": {
         "title": "Iniciar Sesión",
-        "email": "Correo electrónico",
-        "password": "Contraseña",
+        "titleNav": "Tienda",
+        "linkRegNav": "Registrar",
+        "username": "Ingresa Usuario",
+        "password": "Ingresa Contraseña",
         "buttonLogin": "Iniciar Sesión",
-        "promptText": "No tienes una cuenta?",
+        "text": "No tienes una cuenta?",
         "linkRegister": "Regístrate ahora" 
     },
     "RegisterView": {
         "title": "Crea una cuenta",
-        "username": "Usuario",
-        "email":"Correo electrónico",
-        "password": "Contraseña",
-        "confirmPassword": "Confirmar Contraseña",
+        "titleNav": "Tienda",
+        "linkLoginNav": "Iniciar Sesión",
+        "name": "Ingresa Nombre",
+        "username": "Ingresa Usuario",
+        "email":"Ingresa Correo electrónico",
+        "password": "Ingresa Contraseña",
+        "phone": "Ingresa Teléfono",
         "buttonRegister": "Registrarse",
-        "promptText": "Ya tienes una cuenta?",
+        "loading": "Cargando...",
+        "text": "Ya tienes una cuenta?",
         "linkLogin": "Inicia sesión ahora"
     },
-    "HomePageView": {
-        "title": "Comercio Electrónico",
+    "ProductPageView": {
+        "title": "Tienda",
         "description": "Encuentra productos y servicios de la comunidad",
         "welcome": "Bienvenido",
         "logoutButton": "Cerrar Sesión"

@@ -6,4 +6,9 @@ export const StyleNavbar = styled.nav`
     align-items: center;
     background-color: lightblue;
     padding: 1rem 1rem;
+
+    div {
+        display: flex;
+        gap: 1rem;
+    }
 `

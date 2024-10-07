@@ -75,43 +75,43 @@ export default function RegisterFormContainer() {
         <Input
           type="email"
           name="email"
-          placeholder="Ingresa correo"
+          placeholder={traduction("email")}
           value={registerState.email}
           onChange={handleChange}
         />
         <Input
           type="text"
           name="username"
-          placeholder="Ingresa usuario"
+          placeholder={traduction("password")}
           value={registerState.username}
           onChange={handleChange}
         />
         <Input
           type="text"
           name="name"
-          placeholder="Ingresa nombre"
+          placeholder={traduction("name")}
           value={registerState.name}
           onChange={handleChange}
         />
         <Input
           type="password"
           name="password"
-          placeholder="Ingresa contraseña"
+          placeholder={traduction("password")}
           value={registerState.password}
           onChange={handleChange}
         />
         <Input
           type="text"
           name="phone"
-          placeholder="Ingresa teléfono"
+          placeholder={traduction("phone")}
           value={registerState.phone}
           onChange={handleChange}
         />
-        <Button type="submit">Registrar</Button>
-        {loading && <p>Cargando...</p>}
+        <Button type="submit">{traduction("buttonRegister")}</Button>
+        {loading && <p>{traduction("loading")}</p>}
         {error && <p className="error text-red-500">{error}</p>}
         <div>
-          {traduction("promptText")}{" "}
+          {traduction("text")}{" "}
           <Link href="/login">{traduction("linkLogin")}</Link>
         </div>
       </Form>
