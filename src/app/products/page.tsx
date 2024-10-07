@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import SelectLanguage from "@/components/SelectLanguage/SelectLanguage";
 import Button from "@/components/ui/Button.ui";
 import Products from "@/components/Products/Products";
+import Link from "next/link";
 // import { useEffect } from "react";
 
 function ProductPage() {
@@ -38,6 +39,7 @@ function ProductPage() {
             </Button>
           )}
           <SelectLanguage />
+          <Link href='/cart'>{t("cart")}</Link>
         </div>
       </Navbar>
 

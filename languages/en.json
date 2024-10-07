@@ -28,6 +28,7 @@
         "description": "Find products and community services",
         "welcome": "Welcome",
         "logoutButton": "Log out",
-        "productsTitle": "Products"
+        "productsTitle": "Products",
+        "cart": "Cart"
     }
 }

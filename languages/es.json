@@ -28,6 +28,7 @@
         "description": "Encuentra productos y servicios de la comunidad",
         "welcome": "Bienvenido",
         "logoutButton": "Cerrar Sesión",
-        "productsTitle": "Productos"
+        "productsTitle": "Productos",
+        "cart": "Carrito"
     }
 }
