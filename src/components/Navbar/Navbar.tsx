@@ -1,11 +1,17 @@
+"use client"
 import React from "react";
+import { StyleNavbar } from "./StyledNavbar";
 
+interface NavbarProps {
+    children: React.ReactNode
+}
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<NavbarProps> = ({children}) => {
     
-
     return (
-        <nav></nav>
+        <StyleNavbar>
+            {children}
+        </StyleNavbar>
     );
 }
 

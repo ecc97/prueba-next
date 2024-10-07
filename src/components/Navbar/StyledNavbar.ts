@@ -5,5 +5,5 @@ export const StyleNavbar = styled.nav`
     justify-content: space-around;
     align-items: center;
     background-color: lightblue;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
 `

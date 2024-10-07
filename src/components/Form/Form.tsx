@@ -1,4 +1,5 @@
 'use client';
+import { FormStyle } from "./styledForm";
 
 interface FormProps {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -7,9 +8,9 @@ interface FormProps {
 
 const Form: React.FC<FormProps> = ({ onSubmit, children }) => {
   return (
-    <form onSubmit={onSubmit}>
+    <FormStyle onSubmit={onSubmit}>
       {children}
-    </form>
+    </FormStyle>
   );
 };
 

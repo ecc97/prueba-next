@@ -1,0 +1,23 @@
+.navLink {
+    display: flex;
+    gap: 1rem;
+}
+
+.heroSection {
+    background-image: url('https://t3.ftcdn.net/jpg/03/11/27/96/360_F_311279691_wfNvKEXKX3cyYFsZ7OttC2C5xkf8Y2BL.jpg');
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.titleHero {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}

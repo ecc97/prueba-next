@@ -1,36 +1,37 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { getUsers, addUser } from "@/utils/users";
+import { urlApi } from "../../ApiUrl";
 
-// let users = [
-//     { id: "1", email: "test@example.com", passwordHash: bcrypt.hashSync("password123", 10), language: "es", token: "my-token-fake-123" },
-// ]
-
-const users = getUsers()
 
 export async function POST(req: Response) {
-    const { username, email, password } = await req.json();
+    const { email, username, password, name, phone } = await req.json();
 
-    // Verificar si el usuario ya existe
-    const existingUser = users.find((user) => user.email === email);
-    if (existingUser) {
-        return NextResponse.json({ message: "El usuario ya existe." }, { status: 400 });
-    }
-
-    // Generar un hash para la contraseña
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Crear el nuevo usuario
     const newUser = {
-        id: (users.length + 1).toString(),
         username,
         email,
         passwordHash: hashedPassword,
-        language: "es",
-        token: `fake-token-${Math.random().toString(36).substr(2)}`,
+        name,
+        phone,
     };
+    try {
+        const response = await fetch(`${urlApi}/auth/signup`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newUser),
+        })
 
-    // Añadir el nuevo usuario a la lista
-    addUser(newUser);
-    return NextResponse.json( {message: "Usuario registrado existosamente"}, { status: 201 });
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || "Error al registrar la cuenta");
+        }
+    
+        return NextResponse.json( {message: "Usuario registrado existosamente"}, { status: 201 });
+    } catch (error) {
+        console.error(error)
+    }
 }

@@ -1,10 +1,11 @@
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { urlApi } from "../../ApiUrl";
 
 
 const authenticateUser = async (username: string, password: string) => {
   try {
-    const response = await fetch(`http://192.168.88.39:7000/auth/login`, {
+    const response = await fetch(`${urlApi}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -18,7 +19,7 @@ const authenticateUser = async (username: string, password: string) => {
 
     const data = await response.json();
 
-    if (data.user && data.token) {
+    if (data.user && data.access_token) {
       return {
         id: data.user.id,
         email: data.user.email,
@@ -85,7 +86,7 @@ const handler = NextAuth({
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET || "some-super-secret-key",
+  secret: process.env.NEXTAUTH_SECRET || "secret-key",
   session: { strategy: "jwt" },
 });
 

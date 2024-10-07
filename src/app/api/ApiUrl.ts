@@ -1,0 +1,1 @@
+export const urlApi: string = `http://192.168.88.39:7000`
