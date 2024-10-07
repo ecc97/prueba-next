@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { urlApi } from "../../ApiUrl";
 
 export async function GET() {
@@ -8,6 +8,7 @@ export async function GET() {
         
         return NextResponse.json(data);
     } catch (error) {
+        console.error("Error al obtener los productos:", error);
         return NextResponse.json({ message: "Error al obtener los productos." }, { status: 500});
     }
 }
