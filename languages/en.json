@@ -27,6 +27,7 @@
         "title": "Store",
         "description": "Find products and community services",
         "welcome": "Welcome",
-        "logoutButton": "Log out"
+        "logoutButton": "Log out",
+        "productsTitle": "Products"
     }
 }

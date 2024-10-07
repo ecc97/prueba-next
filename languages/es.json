@@ -27,6 +27,7 @@
         "title": "Tienda",
         "description": "Encuentra productos y servicios de la comunidad",
         "welcome": "Bienvenido",
-        "logoutButton": "Cerrar Sesión"
+        "logoutButton": "Cerrar Sesión",
+        "productsTitle": "Productos"
     }
 }

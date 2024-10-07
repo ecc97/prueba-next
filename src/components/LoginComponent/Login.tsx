@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { signIn, useSession } from "next-auth/react";
-import { getSession } from "next-auth/react";
+// import { getSession } from "next-auth/react";
 import { StyleContainer } from "./styledLogin";
 import { Form } from "@/components";
 import Input from "@/components/ui/Input.ui";
@@ -35,37 +35,37 @@ export default function LoginFormContainer() {
 
   React.useEffect(() => {
     if (status === "authenticated") {
-      router.push("/home");
+      router.push("/products");
     }
-  }, [status]);
+  }, [status, session, router]);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
     try {
+      console.log("Attempting to sign in with:", loginState);
       const result = await signIn("credentials", {
         redirect: false,
         username: loginState.username,
         password: loginState.password,
       });
 
+      console.log(result);
+
       if (result?.error) {
         setError(result.error);
       } else {
         setLoginState(initialLoginState);
         setError(null);
-        console.log(result);
-        const updatedSession = await getSession();
-        console.log(session?.user.email);
-        console.log(updatedSession?.user.email);
-        console.log(updatedSession?.user.username);
         router.push("/products");
       }
     } catch (error) {
+      console.error("Error during sign in:", error);
       setError("Hubo un error iniciando sesión.");
       setLoginState(initialLoginState);
     }
   };
+
   return (
     <StyleContainer>
       <Form onSubmit={handleLogin}>
