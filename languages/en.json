@@ -1,0 +1,26 @@
+{
+    "LoginView": {
+        "title": "Log In",
+        "email": "Email Address",
+        "password": "Password",
+        "buttonLogin": "Login",
+        "promptText": "Do you not have an account?",
+        "linkRegister": "Register now" 
+    },
+    "RegisterView": {
+        "title": "Create an account",
+        "username": "username",
+        "email":"Email Address",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "buttonRegister": "Register",
+        "promptText": "Already have you an account?",
+        "linkLogin": "Login now"
+    },
+    "HomePageView": {
+        "title": "E-Commerce",
+        "description": "Find products and community services",
+        "welcome": "Welcome",
+        "logoutButton": "Log out"
+    }
+}
